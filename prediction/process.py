@@ -1,5 +1,3 @@
-import streamlit as st
-from stqdm import stqdm
 import re
 import time
 import pandas as pd
@@ -91,6 +89,7 @@ class DataProcessor:
             df, columns=['weather', 'race_type', 'ground_state', '性'])
 
         self.data_c = df
+
 
 class Results(DataProcessor):
     def __init__(self, results):
@@ -238,6 +237,7 @@ class Results(DataProcessor):
         self.le_horse = LabelEncoder().fit(self.data_pe['horse_id'])
         self.le_jockey = LabelEncoder().fit(self.data_pe['jockey_id'])
         super().process_categorical(self.le_horse, self.le_jockey, self.data_pe)
+
 
 class ShutubaTable(DataProcessor):
     def __init__(self, shutuba_tables):
@@ -393,9 +393,10 @@ class ShutubaTable(DataProcessor):
         # 使用する列を選択
         df = df[['枠', '馬番', '斤量', 'course_len', 'weather', 'race_type',
                 'ground_state', 'date', 'horse_id', 'jockey_id', '性', '年齢',
-                '体重', '体重変化', '開催', 'n_horses']]
+                 '体重', '体重変化', '開催', 'n_horses']]
 
         self.data_p = df.rename(columns={'枠': '枠番'})
+
 
 class HorseResults:
     def __init__(self, horse_results):
@@ -555,13 +556,13 @@ class HorseResults:
         filtered_df = target_df[target_df['date'] == date]
         agari_s = filtered_df['上り']
         merged_df = df.merge(agari_s, left_on='horse_id',
-                            right_index=True, how='left')
+                             right_index=True, how='left')
         return merged_df
 
     def merge_all_agari(self, results):
         date_list = results['date'].unique()
         merged_df = pd.concat([self.merge_agari(results, date)
-                            for date in tqdm(date_list)])
+                               for date in tqdm(date_list)])
         return merged_df
 
     def merge_agari_sum(self, results, horse_id):
@@ -595,6 +596,7 @@ class HorseResults:
         merged_df = pd.concat([self.merge_agari_sum(results, horse_id)
                               for horse_id in tqdm(horse_id_list)])
         return merged_df
+
 
 class Peds:
     def __init__(self, peds):
@@ -660,6 +662,7 @@ class Peds:
         for column in df.columns:
             df[column] = LabelEncoder().fit_transform(df[column].fillna('Na'))
         self.peds_e = df.astype('category')
+
 
 class Return:
     def __init__(self, return_tables):
@@ -786,6 +789,7 @@ class Return:
         df = pd.concat([wins, return_], axis=1)
         return df.apply(lambda x: pd.to_numeric(x, errors='coerce'))
 
+
 class ModelEvaluator:
     def __init__(self, model, return_tables_path_list):
         self.model = model
@@ -860,7 +864,7 @@ class ModelEvaluator:
         if kind == 'wide':
             rt_1R = self.wide.loc[race_id]
             return_ = (rt_1R[['win_0', 'win_1']].
-                        apply(lambda x: set(x) == set(umaban), axis=1)) \
+                       apply(lambda x: set(x) == set(umaban), axis=1)) \
                 * rt_1R['return']/100 * amount
             return_ = return_.sum()
         if kind == 'sanrentan':
@@ -1115,7 +1119,7 @@ def concat_pd(data):
 
 def concat_peds(peds_dict):
     peds = pd.concat([peds_dict[key]
-                    for key in peds_dict], axis=1).T.add_prefix('peds_')
+                      for key in peds_dict], axis=1).T.add_prefix('peds_')
     return peds
 
 
@@ -1146,10 +1150,10 @@ def gain(return_func, X, n_samples=100, t_range=[0.5, 3.5]):
 
 def plot(df, label=''):
     plt.fill_between(
-                    df.index, y1=df['return_rate']-df['std'],
-                    y2=df['return_rate']+df['std'],
-                    alpha=0.2
-                    )
+        df.index, y1=df['return_rate']-df['std'],
+        y2=df['return_rate']+df['std'],
+        alpha=0.2
+    )
     plt.plot(df.index, df['return_rate'], label=label)
     plt.legend()
     plt.grid(True)

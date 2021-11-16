@@ -25,7 +25,7 @@ SECRET_KEY = 'gi*p$t#w0-zpzp$)9-kpjuz!1fd25&(l^mvk3)ep!-$xjfa2uu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['waterleaper.net']
 
 
 # Application definition
