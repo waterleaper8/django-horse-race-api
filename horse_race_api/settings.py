@@ -53,6 +53,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'https://waterleaper.net',
 ]
 
 ROOT_URLCONF = 'horse_race_api.urls'
