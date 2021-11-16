@@ -1,0 +1,17 @@
+sklearn
+tqdm
+stqdm
+pandas
+numpy
+requests
+scipy
+bs4
+chromedriver_binary
+selenium
+matplotlib
+lightgbm
+optuna
+IPython
+lxml
+djangorestframework
+Django
