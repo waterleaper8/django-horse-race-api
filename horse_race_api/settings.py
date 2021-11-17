@@ -28,7 +28,7 @@ except ImportError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['waterleaper.net']
+ALLOWED_HOSTS = ['waterleaper.net', 'localhost']
 
 
 # Application definition
