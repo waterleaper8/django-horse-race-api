@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('horse_race_prediction/horse-race-api/admin/', admin.site.urls),
-    path('horse_race_prediction/horse-race-api/prediction/',
+    path('horse_race_prediction/api/admin/', admin.site.urls),
+    path('horse_race_prediction/api/prediction/',
          include('prediction.urls'))
 ]
