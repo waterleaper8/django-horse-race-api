@@ -28,7 +28,7 @@ except ImportError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['waterleaper.net', 'localhost']
+ALLOWED_HOSTS = ['waterleaper.net', 'localhost', '153.126.167.243']
 
 
 # Application definition
@@ -55,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
+    'http://localhost',
+    'https://localhost',
     'http://localhost:3000',
     'https://waterleaper.net',
 ]
