@@ -278,11 +278,11 @@ class ShutubaTable(DataProcessor):
                 if 'ダ' in text:
                     df['race_type'] = ['ダート'] * len(df)
 
-            mmdds = soup.find('dl', attrs={'id': 'RaceList_DateList'})
-            mmdd = mmdds.find('dd', attrs={'class': 'Active'}).text[:5]
-            mm = str(mmdd.strip('月')[0]).zfill(2)
-            dd = str(mmdd.strip('月')[2]).rstrip('日').zfill(2)
-            date = race_id[:4] + '/' + mm + '/' + dd
+            dl = soup.find('dl', attrs={'id': 'RaceList_DateList'})
+            active = dl.find('dd', attrs={'class': 'Active'})
+            href = active.find('a')['href']
+            yymmdd = href.split('kaisai_date=')[1][:8]
+            date = yymmdd[0:4] + '/' + yymmdd[4:6] + '/' + yymmdd[6:8]
 
             df['date'] = [date] * len(df)
             df['start'] = texts[0]+':'+texts[1]
