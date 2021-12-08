@@ -99,7 +99,6 @@ def prediction(request):
         except Exception as e:
             return HttpResponse(e)
 
-
 def coupon(request):
     if 'coupon_code' in request.GET:
         coupon_code = request.GET['coupon_code']

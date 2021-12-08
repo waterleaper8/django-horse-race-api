@@ -6,7 +6,7 @@ requests
 scipy
 bs4
 chromedriver_binary
-selenium
+selenium==3.141.0
 matplotlib
 lightgbm
 optuna
