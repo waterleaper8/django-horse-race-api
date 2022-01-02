@@ -6,8 +6,6 @@ from . import process
 import pandas as pd
 
 # Create your views here.
-
-
 def init_read():
     # Resultsクラスのオブジェクトを作成
     r = process.Results.read_pickle([
