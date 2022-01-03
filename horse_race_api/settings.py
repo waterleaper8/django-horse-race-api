@@ -26,7 +26,7 @@ except ImportError:
     pass
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['horse-api.waterleaper.net', 'waterleaper.net', 'localhost', '153.126.167.243', '127.0.0.1']
 
