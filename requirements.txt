@@ -9,7 +9,7 @@ async-lru==2.0.4
 attrs==23.1.0
 Babel==2.12.1
 backcall==0.2.0
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 beautifulsoup4==4.12.2
 bleach==6.0.0
 bs4==0.0.1
