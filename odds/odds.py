@@ -40,7 +40,7 @@ def detect(race_id):
     title = title + ' / ' + t
 
     # 単勝・複勝
-    tanfuku = driver.find_element(By.CSS_SELECTOR, '#Ninki')
+    tanfuku = driver.find_element(By.CSS_SELECTOR, '.Tanfuku')
     umabans = tanfuku.find_elements(By.CSS_SELECTOR, 'tr')[1:]
     tansho = []
     umaban_list = []
@@ -79,7 +79,7 @@ def detect(race_id):
         score_arr[int(combi[1]) - 1] += (1 / odd)
 
     # ドロップダウンを取得
-    dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+    dropdown = driver.find_element(By.ID, 'list_select_horse')
     n_dropdown = len(dropdown.find_elements(By.CSS_SELECTOR, 'option'))
     select = Select(dropdown)
 
@@ -89,7 +89,7 @@ def detect(race_id):
             if i == 3:
                 break
             # ドロップダウンを取得し、次のオプションへ遷移
-            dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+            dropdown = driver.find_element(By.ID, 'list_select_horse')
             select = Select(dropdown)
             print(url)
             select.select_by_index(i)
@@ -129,7 +129,7 @@ def detect(race_id):
         score_arr[int(combi[1]) - 1] += (1 / _odd)
 
     # ドロップダウンを取得
-    dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+    dropdown = driver.find_element(By.ID, 'list_select_horse')
     n_dropdown = len(dropdown.find_elements(By.CSS_SELECTOR, 'option'))
     select = Select(dropdown)
 
@@ -139,7 +139,7 @@ def detect(race_id):
             if i == 3:
                 break
             # ドロップダウンを取得し、次のオプションへ遷移
-            dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+            dropdown = driver.find_element(By.ID, 'list_select_horse')
             select = Select(dropdown)
             print(url)
             select.select_by_index(i)
@@ -182,7 +182,7 @@ def detect(race_id):
         score -= 1
 
     # ドロップダウンを取得
-    dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+    dropdown = driver.find_element(By.ID, 'list_select_horse')
     n_dropdown = len(dropdown.find_elements(By.CSS_SELECTOR, 'option'))
     select = Select(dropdown)
 
@@ -192,7 +192,7 @@ def detect(race_id):
             if i == 2:
                 break
             # ドロップダウンを取得し、次のオプションへ遷移
-            dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+            dropdown = driver.find_element(By.ID, 'list_select_horse')
             select = Select(dropdown)
             print(url)
             select.select_by_index(i)
@@ -221,7 +221,7 @@ def detect(race_id):
     driver.get(url)
     time.sleep(0.1)
     # ドロップダウンを取得
-    dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+    dropdown = driver.find_element(By.ID, 'list_select_horse')
     select = Select(dropdown)
     n_dropdown = len(dropdown.find_elements(By.CSS_SELECTOR, 'option'))
     print(f"三連単: 1 / {n_dropdown-2}")
@@ -250,7 +250,7 @@ def detect(race_id):
             # if i == 2:
             #     break
             # ドロップダウンを取得し、次のオプションへ遷移
-            dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+            dropdown = driver.find_element(By.ID, 'list_select_horse')
             select = Select(dropdown)
             print(f"三連単: {i} / {n_dropdown-2}")
             select.select_by_index(i)
@@ -284,7 +284,7 @@ def detect(race_id):
     driver.get(url)
     time.sleep(0.1)
     # ドロップダウンを取得
-    dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+    dropdown = driver.find_element(By.ID, 'list_select_horse')
     select = Select(dropdown)
     n_dropdown = len(dropdown.find_elements(By.CSS_SELECTOR, 'option'))
     print(f"三連複: 1 / {n_dropdown-2}")
@@ -306,7 +306,7 @@ def detect(race_id):
             # if i == 3:
             #     break
             # ドロップダウンを取得し、次のオプションへ遷移
-            dropdown = driver.find_element(By.CSS_SELECTOR, '#ninki_select')
+            dropdown = driver.find_element(By.ID, 'list_select_horse')
             select = Select(dropdown)
             print(f"三連複: {i} / {n_dropdown-2}")
             select.select_by_index(i)
