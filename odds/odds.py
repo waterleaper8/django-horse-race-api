@@ -40,7 +40,7 @@ def detect(race_id):
     title = title + ' / ' + t
 
     # 単勝・複勝
-    tanfuku = driver.find_element(By.ID, 'Ninki')
+    tanfuku = driver.find_element(By.CSS_SELECTOR, '.Tanfuku')
     umabans = tanfuku.find_elements(By.CSS_SELECTOR, 'tr')[1:]
     tansho = []
     umaban_list = []
