@@ -34,7 +34,7 @@ def detect(race_id):
     shutuba_df = shutuba_df.set_axis(['umaban', 'umamei'], axis=1)
 
     driver.get(url)
-    time.sleep(0.1)
+    time.sleep(3)
     title = driver.title[:-26]
     t = driver.find_element("class name", 'RaceData01').text
     title = title + ' / ' + t
