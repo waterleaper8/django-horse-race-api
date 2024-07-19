@@ -29,7 +29,14 @@ SECRET_KEY = '7zga7Kcv9ChnVcn5Krz4aBBs2qF_X_iK6Tc9OeKe34DcnO-Vyt3QMxQ4MFoJJAKXjh
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ['horse-api.waterleaper.net', 'waterleaper.net', 'localhost', '153.126.167.243', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+    '153.126.167.243',
+    'os3-369-17552.vs.sakura.ne.jp',
+    'horse-api.waterleaper.net',
+    'waterleaper.net',
+]
 
 
 # Application definition
