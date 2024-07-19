@@ -247,8 +247,8 @@ def detect(race_id):
     if n_dropdown > 3:
         for i in range(2, n_dropdown-1):
             # Xページ目で中断
-            # if i == 2:
-            #     break
+            if i == 11:
+                break
             # ドロップダウンを取得し、次のオプションへ遷移
             dropdown = driver.find_element(By.ID, 'ninki_select')
             select = Select(dropdown)
