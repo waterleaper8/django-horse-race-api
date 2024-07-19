@@ -24,6 +24,8 @@ try:
 except ImportError:
     pass
 
+SECRET_KEY = '7zga7Kcv9ChnVcn5Krz4aBBs2qF_X_iK6Tc9OeKe34DcnO-Vyt3QMxQ4MFoJJAKXjhI'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
