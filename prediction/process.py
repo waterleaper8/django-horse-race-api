@@ -17,7 +17,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import roc_auc_score
 from sklearn.preprocessing import LabelEncoder
 import lightgbm as lgb
-import optuna.integration.lightgbm as lgb_o
+# import optuna.integration.lightgbm as lgb_o
 from itertools import permutations
 from itertools import combinations
 import IPython.core.display as display
@@ -651,7 +651,7 @@ class Peds:
             except:
                 break
 
-        #列名をpeds_0, ..., peds_61にする
+        # 列名をpeds_0, ..., peds_61にする
         peds_df = pd.concat([peds_dict[key]
                             for key in peds_dict], axis=1).T.add_prefix('peds_')
 
@@ -718,7 +718,7 @@ class Return:
                 break
 
         # pd.DataFrame型にして一つのデータにまとめる
-        #return_tables_df = pd.concat([return_tables[key] for key in return_tables])
+        # return_tables_df = pd.concat([return_tables[key] for key in return_tables])
         return return_tables
 
     @property

@@ -6,6 +6,8 @@ from . import process
 import pandas as pd
 
 # Create your views here.
+
+
 def init_read():
     # Resultsクラスのオブジェクトを作成
     r = process.Results.read_pickle([
@@ -62,7 +64,7 @@ def init_read():
     return r, hr, p, lgb_clf, me
 
 
-r, hr, p, lgb_clf, me = init_read()
+# r, hr, p, lgb_clf, me = init_read()
 
 
 def prediction(request):
@@ -96,6 +98,7 @@ def prediction(request):
             return HttpResponse(pred_table_json)
         except Exception as e:
             return HttpResponse(e)
+
 
 def coupon(request):
     if 'coupon_code' in request.GET:

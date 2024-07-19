@@ -56,8 +56,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost',
-    'https://localhost',
+    "http://127.0.0.1:5500",
     'http://localhost:3000',
     'https://waterleaper.net',
     'https://horse-api.waterleaper.net'
