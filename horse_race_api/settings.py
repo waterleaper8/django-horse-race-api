@@ -59,7 +59,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:5500",
     'http://localhost:3000',
     'https://waterleaper.net',
-    'https://horse-api.waterleaper.net'
+    'https://horse-api.waterleaper.net',
+    'https://os3-369-17552.vs.sakura.ne.jp'
 ]
 
 ROOT_URLCONF = 'horse_race_api.urls'

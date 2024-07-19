@@ -1,4 +1,5 @@
 bs4
+chardet
 chromedriver_binary
 Django
 django-cors-headers
