@@ -1,0 +1,12 @@
+[Unit]
+Description=Django Horse Race API Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/dev/django-horse-race-api
+ExecStart=/bin/bash /home/ubuntu/dev/django-horse-race-api/run.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
