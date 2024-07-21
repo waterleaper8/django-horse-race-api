@@ -24,6 +24,16 @@ def detect(race_id):
     options.page_load_strategy = 'eager'
     driver = webdriver.Chrome(options=options)
 
+    loginUrl = "https://regist.netkeiba.com/account/?pid=login"
+    driver.get(loginUrl)
+    loginId = driver.find_element(By.CSS_SELECTOR, 'input[name="login_id"]')
+    pswd = driver.find_element(By.CSS_SELECTOR, 'input[name="pswd"]')
+    loginId.send_keys("waterleaper8@icloud.com")
+    pswd.send_keys("4qsLZPGBvRggdu88EgjJcezwrRbHa2sdXu2LxyZajXhrWs4jAvGNoHCsmbUFAGppWti3LE7WmuoCtCu3gY3jDpzhZFPU2y8KooPd")
+    loginBtn = driver.find_element(By.CSS_SELECTOR, 'input[alt="ログイン"]')
+    time.sleep(2)
+    loginBtn.click()
+
     url = f'https://race.netkeiba.com/odds/index.html?race_id={race_id}'
 
     shutuba_url = f'https://race.netkeiba.com/race/shutuba.html?race_id={race_id}'
